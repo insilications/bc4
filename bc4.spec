@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : bc4
-Version  : 4.3.7.25118
-Release  : 20
-URL      : file:///aot/build/clearlinux/packages/bc4/bc4-v4.3.7.25118.tar.gz
-Source0  : file:///aot/build/clearlinux/packages/bc4/bc4-v4.3.7.25118.tar.gz
+Version  : 4.4.0.25886
+Release  : 21
+URL      : file:///aot/build/clearlinux/packages/bc4/bc4-v4.4.0.25886.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/bc4/bc4-v4.4.0.25886.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSL-1.0 Zlib
@@ -74,7 +74,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621416530
+export SOURCE_DATE_EPOCH=1629322608
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -115,11 +115,11 @@ export CCACHE_BASEDIR=/builddir/build/BUILD
 #export CCACHE_NODIRECT=true
 ## altflags1 end
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags}    V=1 VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1621416530
+export SOURCE_DATE_EPOCH=1629322608
 rm -rf %{buildroot}
 pushd clr-build
 %make_install

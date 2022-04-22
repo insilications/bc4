@@ -1,5 +1,5 @@
 PKG_NAME := bc4
-URL = git@github.com:insilications/bc4-clr.git
+URL = 
 ARCHIVES = 
 ARCHIVES_GIT = 
 
